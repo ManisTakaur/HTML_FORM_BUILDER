@@ -1,0 +1,7 @@
+{
+    "name": "formbuilder/htmlformbuilder",
+    "description": "A Simple HTML Form Builder",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {}
+}
