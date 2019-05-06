@@ -1,71 +1,102 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## Introduction
+This project's  goal is to make a simple form builder package, which will have only four types of input: (i) text, (ii)Checkbox, (iii)radio, (iv) dropdown. This package is able to pass style(s), value(s) and type to the helpers.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Form Builder
+### Installation
+Require this package with composer.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```
+    composer require barryvdh/laravel-debugbar --dev
 
-## Learning Laravel
+```
+#### Laravel 5.5+:
+If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+formBuilder\htmlFormBuilder\htmlFormBuilderServiceProvider::class,
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost you and your team's skills by digging into our comprehensive video library.
+```
 
-## Laravel Sponsors
+##### Input tag:
+We will be using this template as follows
+```
+@include('htmlFormBuilder::input', ['data'=>$dataUsername])
+```
+Where data is a key value array in the following structure:
+```
+$dataUsername = [
+    'ids' => ['username'],
+    'classes' => ['form-control'],
+    'type' => 'text',
+    'name' => 'username',
+    'values' => [
+        'prev_value' => 'xyz'
+    ],
+    'required' => true
+];
+```
+##### Select tag:
+We will be using this template as follows
+```
+@include(“'htmlFormBuilder::select”, [“data” => $data])
+```
+Where data is a key value array in the following structure:
+```
+$dataSelect = [
+    'ids' => ['select'],
+    'classes' => ['custom-select mr-sm-10'],
+    'name' => 'select',
+    'type' => 'select',
+    'values' => [
+        'value1' => 'front-end',
+        'value2' => 'back-end',
+        'value3' => 'DBAdmin'
+    ],
+    'active' => 'value2',
+    'required' => true
+];
+```
+In the case of the active value being “null”, a default value has to be generated and put at the top of the options list, otherwise the “active” value is to be placed at the top of the options list.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+##### Radio
+We will be using this template as follows
+```
+@include('htmlFormBuilder::radio', ['data'=>$dataRadio])
+```
+Where data is a key value array in the following structure:
+```
+$dataRadio = [
+    'ids' => ['radio'],
+    'classes' => [''],
+    'name' => 'radio',
+    'values' => [
+        'value1' => '10:00 AM - 06:00PM',
+        'value2' => '11:00 AM - 07:00PM'
+    ],
+    'active' => 'value2',
+    'required' => true
+];
+```
+In the case of the active value not being “null”, the active value has to be selected.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##### Checkbox
+We will be using this template as follows
+```
+@include('htmlFormBuilder::checkbox', ['data'=>$dataCheckBox])
+```
+Where data is a key value array in the following structure:
+```
+$dataCheckBox = [
+    'ids' => ['checkbox'],
+    'classes' => [''],
+    'name' => 'checkbox',
+    'values' => [
+        'value1' => '06-05-2019',
+        'value2' => '07-05-2019'
+    ],
+    'required' => true
+];
+```
