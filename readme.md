@@ -1,5 +1,5 @@
 ## Introduction
-This project's  goal is to make a simple form builder package, which will have only four types of input: (i) text, (ii)Checkbox, (iii)radio, (iv) dropdown. This package is able to pass style(s), value(s) and type to the helpers.
+This project's  goal is to make a simple form builder package, which will have only four types of input: (i) text, (ii)Checkbox, (iii)radio, (iv) dropdown. This package can pass style(s), value(s) and type to the helpers.
 
 
 
@@ -38,6 +38,7 @@ $dataUsername = [
     'required' => true
 ];
 ```
+
 ##### Select tag:
 We will be using this template as follows
 ```
@@ -59,7 +60,7 @@ $dataSelect = [
     'required' => true
 ];
 ```
-In the case of the active value being “null”, a default value has to be generated and put at the top of the options list, otherwise the “active” value is to be placed at the top of the options list.
+In the case of the active value being “null”, a default value will be generated and will be at the top of the options list, otherwise the “active” value will be placed at the top of the options list.
 
 ##### Radio
 We will be using this template as follows
