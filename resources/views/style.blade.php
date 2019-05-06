@@ -176,6 +176,21 @@ input[type=password]:placeholder {
   color: #cccccc;
 }
 
+.select2 {
+  background-color: whitesmoke;
+  border: none;
+  color: #0d0d0d;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+
+}
+
 
 /* ANIMATIONS */
 

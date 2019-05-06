@@ -39,10 +39,30 @@
                             ],
                             'required' => true
                         ];
+
+                        $dataSelect = [
+                            'ids' => ['select'],
+                            'classes' => ['custom-select mr-sm-10'],
+                            'name' => 'select',
+                            'type' => 'select',
+                            'values' => [
+                                'value1' => 'front-end',
+                                'value2' => 'back-end'
+                            ],
+                            'active' => 'value2',
+                            'required' => true
+                        ];
                     @endphp
                     <form>
+                        <div>Enter UserName</div>
                         @include('htmlFormBuilder::input', ['data'=>$dataUsername])
+                        <div>Enter Password</div>
                         @include('htmlFormBuilder::input', ['data'=>$dataPassword])
+                        <div>Select Designation</div>
+                        <div class="select2">
+                            @include('htmlFormBuilder::select', ['data'=>$dataSelect])
+                        </div>
+
                         <input type="submit" class="fadeIn fourth" value="Log In">
                     </form>
                     <div id="formFooter">
