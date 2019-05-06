@@ -62,7 +62,18 @@
                                 'value1' => '10:00 AM - 06:00PM',
                                 'value2' => '11:00 AM - 07:00PM'
                             ],
-                            'active' => 'value1',
+                            'active' => 'value2',
+                            'required' => true
+                        ];
+
+                        $dataCheckBox = [
+                            'ids' => ['checkbox'],
+                            'classes' => [''],
+                            'name' => 'checkbox',
+                            'values' => [
+                                'value1' => '06-05-2019',
+                                'value2' => '07-05-2019'
+                            ],
                             'required' => true
                         ];
                     @endphp
@@ -78,6 +89,10 @@
                         <div>Select Time-Slot</div>
                         <div class="select2">
                             @include('htmlFormBuilder::radio', ['data'=>$dataRadio])
+                        </div>
+                        <div>Select Date</div>
+                        <div class="select2">
+                            @include('htmlFormBuilder::checkbox', ['data'=>$dataCheckBox])
                         </div>
                     </form>
                 </div>
