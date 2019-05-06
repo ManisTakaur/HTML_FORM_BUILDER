@@ -52,6 +52,19 @@
                             'active' => 'value2',
                             'required' => true
                         ];
+
+                        $dataRadio = [
+                            'ids' => ['radio'],
+                            'classes' => ['form-check'],
+                            'name' => 'radio',
+                            'values' => [
+                                'value1' => 'front-end',
+                                'value2' => 'back-end',
+                                'value3' => 'dbAdmin'
+                            ],
+                            'active' => 'value1',
+                            'required' => true
+                        ];
                     @endphp
                     <form>
                         <div>Enter UserName</div>
@@ -62,12 +75,11 @@
                         <div class="select2">
                             @include('htmlFormBuilder::select', ['data'=>$dataSelect])
                         </div>
+                        <div>
+                            @include('htmlFormBuilder::radio', ['data'=>$dataRadio])
+                        </div>
 
-                        <input type="submit" class="fadeIn fourth" value="Log In">
                     </form>
-                    <div id="formFooter">
-                        <a class="underlineHover" href="#">Forgot Password?</a>
-                    </div>
                 </div>
             </div>
         </div>
