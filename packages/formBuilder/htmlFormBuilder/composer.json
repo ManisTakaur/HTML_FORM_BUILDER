@@ -2,6 +2,17 @@
     "name": "formbuilder/htmlformbuilder",
     "description": "A Simple HTML Form Builder",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Manis Rahman",
+            "email": "manis.rahman@yahoo.com"
+        }
+    ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "formBuilder\\htmlFormBuilder\\": "src/"
+        }
+    }
 }

@@ -174,7 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        formBuilder\htmlFormBuilder\src\htmlFormBuilderServiceProvider::class,
+        formBuilder\htmlFormBuilder\htmlFormBuilderServiceProvider::class,
 
     ],
 

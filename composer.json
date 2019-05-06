@@ -34,7 +34,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "FormBuilder\\HTMLFormBuilder\\": "packages/formBuilder/htmlFormBuilder/src"
+            "formBuilder\\htmlFormBuilder\\": "packages/formBuilder/htmlFormBuilder/src"
         },
         "classmap": [
             "database/seeds",
