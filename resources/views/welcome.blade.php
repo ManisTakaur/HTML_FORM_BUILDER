@@ -10,13 +10,13 @@
     </head>
     <body>
         @include('style')
-        <div class="text-center">
+        <div>
             <div class="wrapper fadeInDown">
                 <div id="formContent">
                     <div class="fadeIn first">
                         <img src="https://techynaf.com/img/mobile-logo.png" id="icon" alt="User Icon" />
                     </div>
-                    <br><br>
+                    <br>
                     @php
                         $dataUsername = [
                             'ids' => ['username'],
@@ -47,7 +47,8 @@
                             'type' => 'select',
                             'values' => [
                                 'value1' => 'front-end',
-                                'value2' => 'back-end'
+                                'value2' => 'back-end',
+                                'value3' => 'DBAdmin'
                             ],
                             'active' => 'value2',
                             'required' => true
@@ -55,12 +56,11 @@
 
                         $dataRadio = [
                             'ids' => ['radio'],
-                            'classes' => ['form-check'],
+                            'classes' => [''],
                             'name' => 'radio',
                             'values' => [
-                                'value1' => 'front-end',
-                                'value2' => 'back-end',
-                                'value3' => 'dbAdmin'
+                                'value1' => '10:00 AM - 06:00PM',
+                                'value2' => '11:00 AM - 07:00PM'
                             ],
                             'active' => 'value1',
                             'required' => true
@@ -75,10 +75,10 @@
                         <div class="select2">
                             @include('htmlFormBuilder::select', ['data'=>$dataSelect])
                         </div>
-                        <div>
+                        <div>Select Time-Slot</div>
+                        <div class="select2">
                             @include('htmlFormBuilder::radio', ['data'=>$dataRadio])
                         </div>
-
                     </form>
                 </div>
             </div>
