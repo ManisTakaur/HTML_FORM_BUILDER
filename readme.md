@@ -42,7 +42,7 @@ $dataUsername = [
 ##### Select tag:
 We will be using this template as follows
 ```
-@include(“'htmlFormBuilder::select”, [“data” => $data])
+@include('htmlFormBuilder::select, ['data' => $data])
 ```
 Where data is a key value array in the following structure:
 ```
