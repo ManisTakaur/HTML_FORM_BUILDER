@@ -9,7 +9,7 @@ This project's  goal is to make a simple form builder package, which will have o
 Require this package with composer.
 
 ```
-    composer require barryvdh/laravel-debugbar --dev
+    composer require formbuilder/htmlformbuilder
 
 ```
 #### Laravel 5.5+:
